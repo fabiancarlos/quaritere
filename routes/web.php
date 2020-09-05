@@ -19,8 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/registrar', 'UserController@new');
+Route::post('/users', 'UserController@create');
+Route::get('/users/edit/{id}', 'UserController@edit');
+Route::put('/users_update/{id}', 'UserController@update');
+Route::patch('/users_update/{id}', 'UserController@update');
