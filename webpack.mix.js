@@ -13,3 +13,11 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.styles([
+    'public/css/bootstrap.min.css',
+    'public/css/bootstrap.min.css.map',
+    'public/css/normalize.css',
+    'public/css/main.css',
+    'public/css/quaritere.css',
+], 'public/css/all.css');
