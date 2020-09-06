@@ -72,16 +72,30 @@ $(document).ready(function() {
     }, 500);
   });
 
-
   // VIDEO
-  
-  
   $( ".show-video" ).click(function(event) {
-    videoId = $(this).data('videoid');
+    event.preventDefault();
 
-    console.log("TESSTE", videoId);
+    videoId = $(this).data('videoid');
+    youtubeUrl = $(this).data('youtubeurl');
+
+    if (youtubeUrl) {
+      try {
+        videoId = youtubeUrl.split('/').pop().split('&').shift().replace('watch?v=', '');
+      } catch (error) {
+        console.log("PARSE ERROR >>>", error);
+      }
+    }
+
+    console.log("TESSTE ID >>>", videoId);
+    console.log("TESSTE URL >>>", youtubeUrl);
 
     setTimeout(() => $('#modal-video').modal('show'), 600);
+  });
+
+  // VIDEO
+  $( ".show-video" ).click(function(event) {
+
   });
 
   // setTimeout(() => changeVideoId(), 2000);
@@ -110,6 +124,24 @@ $(document).ready(function() {
     console.log("HIDEEE ", videoId);
 
     player.stopVideo();
+  });
+
+  /**
+   * Control Videos
+   */
+
+  $('#action-video-left').click(function(event) {
+    event.preventDefault();
+
+    var leftPos = $('#card-videos-list').scrollLeft();
+    $("#card-videos-list").animate({scrollLeft: leftPos - 400}, 200);
+  });
+
+  $('#action-video-right').click(function(event) {
+    event.preventDefault();
+
+    var leftPos = $('#card-videos-list').scrollLeft();
+    $("#card-videos-list").animate({scrollLeft: leftPos + 400}, 200);
   });
 
   /**

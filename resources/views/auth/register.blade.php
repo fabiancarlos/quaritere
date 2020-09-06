@@ -10,7 +10,7 @@
             @include('partials.brand')
 
             <div class="card auth-container">
-                <div class="card-header">{{ __('Participar da V Mostra') }}</div>
+                <div class="card-header">{{ __('Participar da V Mostra de Cinema Negro de Mato Grosso') }}</div>
 
                 <div class="bar-title-container">
                     <div class="bar-title bar-title-red"></div>

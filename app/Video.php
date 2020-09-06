@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DateTime;
 
 class Video extends Model
 {
@@ -32,5 +33,12 @@ class Video extends Model
     public function video_category()
     {
         return $this->belongsTo('App\VideoCategory');
+    }
+
+    public function is_video_available()
+    {
+        $current_date = new DateTime();
+
+        return $this->show_available_at >= $current_date && $this->show_end_at <= $current_date;
     }
 }
