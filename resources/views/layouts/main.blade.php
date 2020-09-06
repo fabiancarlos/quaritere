@@ -23,6 +23,9 @@
   <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/quaritere.css?v=1.15">
 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+
   <meta name="theme-color" content="#fafafa">
 
   <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
@@ -50,6 +53,29 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
+
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2670464023166275',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v8.0'
+      });
+      FB.AppEvents.logPageView();
+
+      // $(document).trigger('fbload');
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </head>
 
 <body>
@@ -58,8 +84,6 @@
 
   <!-- Scripts -->
   <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
   <script src="/js/vendor/bootstrap.min.js"></script>
   <script src="/js/plugins.js"></script>
   <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>

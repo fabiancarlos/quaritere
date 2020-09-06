@@ -111,4 +111,29 @@ $(document).ready(function() {
 
     player.stopVideo();
   });
+
+  /**
+   * FACEBOOK
+   */
+
+  // FB.getLoginStatus(function(response) {
+  //   statusChangeCallback(response);
+  // });
 });
+
+//MEANWHILE IN $(document).ready()
+$(document).on(
+  'fbload',  //  <---- HERE'S OUR CUSTOM EVENT BEING LISTENED FOR
+  function(){
+      //some code that requires the FB object
+      //such as...
+      FB.getLoginStatus(function(res){
+          if( res.status == "connected" ){
+              FB.api('/me', function(fbUser) {
+                  console.log("Open the pod bay doors, " + fbUser.name + ".");
+              });
+          }
+      });
+
+  }
+);

@@ -54,6 +54,17 @@
       <div class="bar-title bar-title-green"></div>
     </div>
 
+@forelse ($categories as $category)
+  <h3 class="info-title-lead">{{ $category->name }}</h3>
+
+  @foreach ($category->videos as $video)
+      <p>This is video {{ $video->name }}</p>
+  @endforeach
+@empty
+  <p>Nenhum filme no momento</p>
+@endforelse
+
+
     <h3 class="info-title-lead">Documentário</h3>
 
     <ul class="info-list">
