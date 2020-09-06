@@ -168,18 +168,18 @@ $(document).ready(function() {
    * Control Videos
    */
 
-  $('#action-video-left').click(function(event) {
+  $('.action-video-left').click(function(event) {
     event.preventDefault();
 
-    var leftPos = $('#card-videos-list').scrollLeft();
-    $("#card-videos-list").animate({scrollLeft: leftPos - 400}, 200);
+    var leftPos = $(this).next('.card-videos-list').scrollLeft();
+    $(this).next(".card-videos-list").animate({scrollLeft: leftPos - 400}, 200);
   });
 
-  $('#action-video-right').click(function(event) {
+  $('.action-video-right').click(function(event) {
     event.preventDefault();
 
-    var leftPos = $('#card-videos-list').scrollLeft();
-    $("#card-videos-list").animate({scrollLeft: leftPos + 400}, 200);
+    var leftPos = $(this).prev('.card-videos-list').scrollLeft();
+    $(this).prev(".card-videos-list").animate({scrollLeft: leftPos + 400}, 200);
   });
 
   /**

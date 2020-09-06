@@ -54,13 +54,13 @@
       <h3 class="info-title-lead info-title-lead-reverse">{{ $category->name }}</h3>
 
       <div class="card-video-container">
-        <div class="card-video-control card-video-control-left" id="action-video-left">
+        <div class="card-video-control card-video-control-left action-video-left">
           <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
             <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
           </svg>
         </div>
-        <div class="card-videos-list" id="card-videos-list">
+        <div class="card-videos-list">
           @forelse ($category->videos as $video)
 
           <a
@@ -86,7 +86,7 @@
             <p class="empty-results">Nenhum filme no momento</p>
           @endforelse
         </div>
-        <div class="card-video-control card-video-control-right" id="action-video-right">
+        <div class="card-video-control card-video-control-right action-video-right">
           <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
             <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
