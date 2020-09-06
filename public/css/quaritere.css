@@ -804,3 +804,47 @@ section {
   white-space: normal;
   overflow: hidden;
 }
+
+
+
+
+
+
+.rating {
+  /* float:left; */
+  /* width:300px; */
+}
+.rating-title {
+  font-size: 13px;
+  font-weight: 800;
+  text-align:center;
+  color:#FFF;
+  margin: 0px;
+  line-height: 8px;
+}
+.rating span { float:right; position:relative; }
+.rating span input {
+  position:absolute;
+  top:0px;
+  left:0px;
+  opacity:0;
+}
+.rating span label {
+  display:inline-block;
+  width:30px;
+  height:30px;
+  text-align:center;
+  color:#FFF;
+  font-size:30px;
+  margin-right:2px;
+  line-height:30px;
+  border-radius:50%;
+  -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+  color:#F90;
+}
+

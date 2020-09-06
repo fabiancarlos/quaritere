@@ -54,6 +54,7 @@ function onPlayerError(event) {
   console.log("onPlayerError >", event);
 }
 
+let currentVideo;
 $(document).ready(function() {
   console.log("READY 2")
 
@@ -72,12 +73,50 @@ $(document).ready(function() {
     }, 500);
   });
 
+  // RATING
+  let clearRating = () => {
+    $(".rating input:radio").attr("checked", false);
+    $(".rating span").removeClass('checked');
+  }
+
+  let sendVote = function(video_id, vote) {
+    $.post('/votar', { video_id: video_id, vote: vote }, function( data ) {
+      console.log("HEYYEE", data);
+
+      if (data.hasOwnProperty('video_id')) {
+        alert('Avaliação enviada!');
+      } else {
+        clearRating();
+        alert('Não foi possível realizar sua avaliação, tente novamente!');
+      }
+    });
+  }
+
+  clearRating();
+
+  $('.rating input').click(function () {
+      $(".rating span").removeClass('checked');
+      $(this).parent().addClass('checked');
+  });
+
+  $('input:radio').change(function(){
+      var userRating = this.value;
+      // alert(userRating);
+
+      console.log("do vote", currentVideo, userRating)
+
+      sendVote(currentVideo, userRating);
+  }); 
+
   // VIDEO
   $( ".show-video" ).click(function(event) {
     event.preventDefault();
 
     videoId = $(this).data('videoid');
     youtubeUrl = $(this).data('youtubeurl');
+    currentVideo = $(this).data('currentvideo');
+
+    clearRating();
 
     if (youtubeUrl) {
       try {
@@ -89,16 +128,11 @@ $(document).ready(function() {
 
     console.log("TESSTE ID >>>", videoId);
     console.log("TESSTE URL >>>", youtubeUrl);
+    console.log("TESSTE CURRENT >>>", currentVideo);
 
     setTimeout(() => $('#modal-video').modal('show'), 600);
   });
 
-  // VIDEO
-  $( ".show-video" ).click(function(event) {
-
-  });
-
-  // setTimeout(() => changeVideoId(), 2000);
 
   $('#modal-video').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
@@ -120,8 +154,6 @@ $(document).ready(function() {
   $('#modal-video').on('hide.bs.modal	', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
     var videoId = button.data('videoId');
-
-    console.log("HIDEEE ", videoId);
 
     player.stopVideo();
   });

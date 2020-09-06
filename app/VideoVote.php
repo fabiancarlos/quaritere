@@ -14,4 +14,14 @@ class VideoVote extends Model
     protected $fillable = [
         'video_id', 'user_id', 'vote'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function vote()
+    {
+        return $this->belongsTo('App\Vote');
+    }
 }

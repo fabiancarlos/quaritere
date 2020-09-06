@@ -30,6 +30,8 @@ Route::get('/users/edit/{id}', 'UserController@edit');
 Route::put('/users_update/{id}', 'UserController@update');
 Route::patch('/users_update/{id}', 'UserController@update');
 
+Route::post('/votar', 'VideoVote@store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

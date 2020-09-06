@@ -66,8 +66,9 @@
           <a
             href="{{ $current_user ? '#' : '/register'}}"
             class="card-video-item video-image  {{ $current_user ? 'show-video' : ''}}"
-            data-videoId="{{ $video->video_link_id }}"
-            data-youtubeUrl="{{ $video->video_link }}"
+            data-videoid="{{ $video->video_link_id }}"
+            data-youtubeurl="{{ $video->video_link }}"
+            data-currentvideo="{{ $video->id }}"
           >
             <div class='card-video-image' style="background-image: url('{{ url('storage/'. $video->image) }}');"></div>
             <div class='card-video-info'>
@@ -465,6 +466,45 @@ links não-listados no YouTube e indexados em nosso site oficial.
         <div id="player-video"></div>
       </div>
       <div class="modal-footer modal-video-footer">
+        <div class="rating">
+            <p class="rating-title">Faça uma Avaliação</p>
+            <span>
+              <input type="radio" name="rating" id="str5" value="5"><label for="str5">
+                <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </label>
+            </span>
+            <span>
+              <input type="radio" name="rating" id="str4" value="4"><label for="str4">
+                <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </label>
+            </span>
+            <span>
+              <input type="radio" name="rating" id="str3" value="3"><label for="str3">
+                <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </label>
+            </span>
+            <span>
+              <input type="radio" name="rating" id="str2" value="2"><label for="str2">
+                <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </label>
+            </span>
+            <span>
+              <input type="radio" name="rating" id="str1" value="1"><label for="str1">
+                <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+              </label>
+            </span>
+        </div>
+    
         <button type="button" class="btn btn-mute" data-dismiss="modal">Fechar</button>
       </div>
     </div>
