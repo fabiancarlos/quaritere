@@ -18,6 +18,7 @@ class CreateVideosTable extends Migration
             $table->string('name');
             $table->string('description', 600)->nullable();
             $table->string('sub_title')->nullable();
+            $table->string('image')->nullable();
             $table->string('director')->nullable();
             $table->string('details')->nullable();
             $table->string('kind_movie')->nullable();
