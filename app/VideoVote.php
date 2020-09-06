@@ -20,8 +20,8 @@ class VideoVote extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function vote()
+    public function video()
     {
-        return $this->belongsTo('App\Vote');
+        return $this->belongsTo('App\Video');
     }
 }

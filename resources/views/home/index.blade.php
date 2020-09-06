@@ -8,14 +8,14 @@
   <header class="masthead mb-auto">
     <div class="inner">
       <a href="#" class="masthead-brand">
-        <img class="mb-2" src="/img/logo.png"  width="120" height="120">
+        <img class="mb-2" src="/img/logo.png"  width="90" height="90">
       </a>
       <nav class="nav nav-masthead p-4 justify-content-center">
         <!-- <a class="nav-link btn-navigate" href="#pre_show">Pré-mostra</a> -->
         <a class="nav-link btn-navigate" href="#show_main">Filmes Selecionados</a>
-        <a class="nav-link btn-navigate" href="#about">Quariterê</a>
+        {{-- <a class="nav-link btn-navigate" href="#about">Quariterê</a> --}}
         <!-- <a class="nav-link btn-navigate" href="#previous_events">Mostras anteriores</a> -->
-        <a class="nav-link btn-navigate" href="#regulation">Regulamento</a>
+        {{-- <a class="nav-link btn-navigate" href="#regulation">Regulamento</a> --}}
         <a class="nav-link btn-navigate" href="#jury">Juri</a>
         <a class="nav-link btn-navigate" href="#special_guest">Convidado especial</a>
         <!-- <a class="nav-link btn-navigate" href="#subscription">Inscrição</a> -->
