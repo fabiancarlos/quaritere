@@ -65,17 +65,21 @@
 
           <a
             href="{{ $current_user ? '#' : '/register'}}"
-            class="card-video-item video-image  {{ $current_user ? 'show-video' : ''}}"
+            class="card-video-item video-image {{ $current_user && $video->is_video_available() ? 'show-video' : 'show-welcome'}}"
             data-videoid="{{ $video->video_link_id }}"
             data-youtubeurl="{{ $video->video_link }}"
             data-currentvideo="{{ $video->id }}"
           >
             <div class='card-video-image' style="background-image: url('{{ url('storage/'. $video->image) }}');"></div>
             <div class='card-video-info'>
-              <h4 class="card-video-title">{{ $video->name }} - {{ $video->is_video_available() }}</h4>
+              <h4 class="card-video-title">{{ $video->name }}</h4>
               <h5 class="card-video-subtitle">{{ $video->director }}</h5>
               <h5 class="card-video-subinfo">{{ $video->length_time_show }}</h5>
             </div>
+
+            @if ($video->is_video_available())
+              <div class='tag-available'>ASSISTA</div>
+            @endif
           </a>
 
           @empty
@@ -505,6 +509,49 @@ links não-listados no YouTube e indexados em nosso site oficial.
             </span>
         </div>
     
+        <button type="button" class="btn btn-mute" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Subscription -->
+<div class="modal fade" id="modal-welcome" tabindex="-1" role="dialog" aria-labelledby="modal-welcomeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-welcomeLabel">V Mostra de Cinema Negro de Mato Grosso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <video
+          id="my-video"
+          class="video-js"
+          controls
+          preload="auto"
+          width="700"
+          height="440"
+          poster="/img/post.png"
+          data-setup="{}"
+        >
+          <source src="/video/v_mostra.mp4" type="video/mp4" />
+          <source src="/video/v_mostra.webm" type="video/webm" />
+          <p class="vjs-no-js">
+            Para ver esse vídeo, ative o javascript do ser browser, ou considere
+            atualizar seu browser para
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+              >suportar vídeos HTML5</a
+            >
+          </p>
+        </video>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-link" href="{{ route('register') }}">
+            {{ __('Participar da mostra') }}
+        </a>
+
         <button type="button" class="btn btn-mute" data-dismiss="modal">Fechar</button>
       </div>
     </div>

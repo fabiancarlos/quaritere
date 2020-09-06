@@ -133,6 +133,12 @@ $(document).ready(function() {
     setTimeout(() => $('#modal-video').modal('show'), 600);
   });
 
+  $( ".show-welcome" ).click(function(event) {
+    event.preventDefault();
+
+    $('#modal-welcome').modal('show');
+  });
+
 
   $('#modal-video').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal

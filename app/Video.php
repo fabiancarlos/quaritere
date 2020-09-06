@@ -39,6 +39,16 @@ class Video extends Model
     {
         $current_date = new DateTime();
 
-        return $this->show_available_at >= $current_date && $this->show_end_at <= $current_date;
+        if (is_null($this->show_available_at)) {
+            return null;
+        }
+        if (is_null($this->show_end_at)) {
+            return null;
+        }
+
+        $available = new DateTime($this->show_available_at);
+        $end = new DateTime($this->show_end_at);
+
+        return $available <= $current_date && $end >= $current_date;
     }
 }
