@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('title', 'Quariterê')
 
@@ -20,6 +20,12 @@
         <a class="nav-link btn-navigate" href="#special_guest">Convidado especial</a>
         <!-- <a class="nav-link btn-navigate" href="#subscription">Inscrição</a> -->
         <a class="nav-link btn-navigate" href="#afrocine">Afrocine</a>
+        <?php if ($current_user): ?>
+          <a class="btn btn-link custom-navigate" href="{{ route('logout') }}">Sair</a>
+        <?php else: ?>
+          <a class="btn btn-link custom-navigate" href="{{ route('register') }}">Participar</a>
+        <?php endif ?>
+        
       </nav>
     </div>
   </header>

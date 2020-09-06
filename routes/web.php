@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'HomeController@index');
+Route::get('/logout', 'HomeController@logout');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -28,3 +29,7 @@ Route::post('/users', 'UserController@create');
 Route::get('/users/edit/{id}', 'UserController@edit');
 Route::put('/users_update/{id}', 'UserController@update');
 Route::patch('/users_update/{id}', 'UserController@update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
