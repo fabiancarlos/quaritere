@@ -21,11 +21,10 @@
         <!-- <a class="nav-link btn-navigate" href="#subscription">Inscrição</a> -->
         <a class="nav-link btn-navigate" href="#afrocine">Afrocine</a>
         <?php if ($current_user): ?>
-          <a class="btn btn-link custom-navigate" href="{{ route('logout') }}">Sair</a>
+          <a class="btn btn-link custom-navigate" href="{{ route('logout') }}">{{ $current_user->name }}</a>
         <?php else: ?>
           <a class="btn btn-link custom-navigate" href="{{ route('register') }}">Participar</a>
         <?php endif ?>
-        
       </nav>
     </div>
   </header>
@@ -167,6 +166,7 @@
 
 <!-- <section class="previous-events-container" id="previous_events"></section> -->
 
+<!--
 <section class="regulation-container" id="regulation">
   <div class="container">
     <div class=" main-regulation-info">
@@ -192,6 +192,7 @@ links não-listados no YouTube e indexados em nosso site oficial.
     </div>
   </div>
 </section>
+-->
 
 <section class="special_guest-container" id="special_guest">
   <div class="container">
@@ -415,7 +416,8 @@ links não-listados no YouTube e indexados em nosso site oficial.
 </footer>
 
 <!-- Regulation -->
-<div class="modal fade" id="modal-regulation" tabindex="-1" role="dialog" aria-labelledby="modal-regulationLabel" aria-hidden="true">
+
+{{-- <div class="modal fade" id="modal-regulation" tabindex="-1" role="dialog" aria-labelledby="modal-regulationLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -433,10 +435,10 @@ links não-listados no YouTube e indexados em nosso site oficial.
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
 <!-- Subscription -->
-<div class="modal fade" id="modal-subscription" tabindex="-1" role="dialog" aria-labelledby="modal-subscriptionLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="modal-subscription" tabindex="-1" role="dialog" aria-labelledby="modal-subscriptionLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -454,7 +456,7 @@ links não-listados no YouTube e indexados em nosso site oficial.
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
 <!-- Video -->
 <div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="modal-videoLabel" aria-hidden="true">

@@ -546,7 +546,9 @@ section {
 .jury-container{
   min-height: 200px;
   background-color: #1D1D1D;
-  padding: 40px 0px;
+  background-image: url('../img/noise.png');
+  background-repeat: repeat;
+  padding: 30px 0px;
 }
 
 .main-jury-info {
@@ -563,8 +565,10 @@ section {
 
 .special_guest-container{
   min-height: 200px;
-  background-color: #ffffff;
-  margin: 30px 0px;
+  background-color: #1D1D1D;
+  background-image: url('../img/noise.png');
+  background-repeat: repeat;
+  padding: 30px 0px;
 }
 
 .main-special_guest-info {
