@@ -18,6 +18,10 @@ class Video extends Model
         'video_link_kind', 'video_link_id', 'show_available_at', 'show_end_at',
         'image', 'video_category_id'
     ];
+    protected $appends = ['rating_total'];
+    protected $visible = ['rating_total'];
+    protected $hidden = ['video_category_id'];
+    public $additional_attributes = ['rating_total'];
 
     /**
      * Get the votes for the blog pogoryst.
@@ -50,5 +54,37 @@ class Video extends Model
         $end = new DateTime($this->show_end_at);
 
         return $available <= $current_date && $end >= $current_date;
+    }
+
+    public function getRatingTotalAttribute()
+    {
+        $all_votes = $this->votes;
+        $total_5 = 1;
+        $total_4 = 1;
+        $total_3 = 1;
+        $total_2 = 1;
+        $total_1 = 1;
+
+        foreach ($all_votes as $data) {
+            if($data->vote == 5) {
+                $total_5 += $data->vote;
+            }
+            if($data->vote == 4) {
+                $total_4 += $data->vote;
+            }
+            if($data->vote == 3) {
+                $total_3 += $data->vote;
+            }
+            if($data->vote == 2) {
+                $total_2 += $data->vote;
+            }
+            if($data->vote == 1) {
+                $total_1 += $data->vote;
+            }
+        }
+
+        $rating = (5 * $total_5 + 4 * $total_4 + 3 * $total_3 + 2 * $total_2 + 1 * $total_1) / ($total_5 + $total_4 + $total_3 + $total_2 + $total_1);
+
+        return number_format((float) $rating, 2, '.', '');
     }
 }
