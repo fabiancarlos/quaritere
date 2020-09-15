@@ -113,7 +113,7 @@
                                                 <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
                                             </td>
                                         @endif
-                                        <td>{{ $data->rating_total }}</td>
+                                        <td>{{ $data->rating_total }} ({{ count($data->votes) <= 0 ? 1 : count($data->votes) }})</td>
                                         @foreach($dataType->browseRows as $row)
                                             @php
                                             if ($data->{$row->field.'_browse'}) {
