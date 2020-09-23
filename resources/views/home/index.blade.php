@@ -12,12 +12,12 @@
       </a>
       <nav class="nav nav-masthead p-4 justify-content-center">
         <!-- <a class="nav-link btn-navigate" href="#pre_show">Pré-mostra</a> -->
-        <a class="nav-link btn-navigate" href="#show_main">Filmes Selecionados</a>
+        {{-- <a class="nav-link btn-navigate" href="#show_main">Filmes Selecionados</a> --}}
         {{-- <a class="nav-link btn-navigate" href="#about">Quariterê</a> --}}
         <!-- <a class="nav-link btn-navigate" href="#previous_events">Mostras anteriores</a> -->
         {{-- <a class="nav-link btn-navigate" href="#regulation">Regulamento</a> --}}
-        <a class="nav-link btn-navigate" href="#jury">Juri</a>
-        <a class="nav-link btn-navigate" href="#special_guest">Convidado especial</a>
+        {{-- <a class="nav-link btn-navigate" href="#jury">Juri</a> --}}
+        {{-- <a class="nav-link btn-navigate" href="#special_guest">Convidado especial</a> --}}
         <!-- <a class="nav-link btn-navigate" href="#subscription">Inscrição</a> -->
         <a class="nav-link btn-navigate" href="#afrocine">Afrocine</a>
         <?php if ($current_user): ?>
@@ -33,13 +33,13 @@
 <section class="main-banner-background">
   <div class="main-banner-container">
      <div class="main-banner">
-      <a href="#video" class="banner-link btn-navigate">
-      </a>
+      {{-- <a href="#video" class="banner-link btn-navigate">
+      </a> --}}
     </div>
   </div>
 </section>
 
-<section class="show_main-container" id="show_main">
+{{-- <section class="show_main-container" id="show_main">
   <div class="container-lg main-show_main-info">
     <h2 class="info-title info-title-reverse">Filmes selecionados</h2>
 
@@ -97,7 +97,7 @@
       <p class="empty-results">Nenhum filme no momento</p>
     @endforelse
   </div>
-</section>
+</section> --}}
 
 <!-- <section class="video-container" id="video">
   <div class="container main-video-info">
@@ -194,7 +194,7 @@ links não-listados no YouTube e indexados em nosso site oficial.
 </section>
 -->
 
-<section class="special_guest-container" id="special_guest">
+{{-- <section class="special_guest-container" id="special_guest">
   <div class="container">
     <div class=" main-special_guest-info">
 
@@ -225,9 +225,9 @@ links não-listados no YouTube e indexados em nosso site oficial.
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
-<section class="jury-container" id="jury">
+{{-- <section class="jury-container" id="jury">
   <div class="container">
     <div class=" main-jury-info">
 
@@ -344,7 +344,7 @@ links não-listados no YouTube e indexados em nosso site oficial.
 
     </div>
   </div>
-</section>
+</section> --}}
 
 <!-- <section class="subscription-container" id="subscription">
   <div class="container">
